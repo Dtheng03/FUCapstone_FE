@@ -99,10 +99,10 @@ export const AuthProvider: React.FC<{
   };
 
   const login = async (email: string, password: string) => {
-    // const response = await fetch("https://localhost:8000/identity/Auth/login", {
-    const response = await fetch(
-      "https://fucapstone-be-gateway.onrender.com/identity/Auth/login",
-      {
+    const response = await fetch("https://localhost:8000/identity/Auth/login", {
+    // const response = await fetch(
+    //   "https://fucapstone-be-gateway.onrender.com/identity/Auth/login",
+    //   {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -144,10 +144,10 @@ export const AuthProvider: React.FC<{
     refreshToken: string
   ) => {
     try {
-      // const response = await fetch("https://localhost:8000/identity/Auth/token/refresh", {
-      const response = await fetch(
-        "https://fucapstone-be-gateway.onrender.com/identity/Auth/token/refresh",
-        {
+      const response = await fetch("https://localhost:8000/identity/Auth/token/refresh", {
+      // const response = await fetch(
+      //   "https://fucapstone-be-gateway.onrender.com/identity/Auth/token/refresh",
+      //   {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ accessToken, refreshToken }),
@@ -184,10 +184,10 @@ export const AuthProvider: React.FC<{
     const accessToken = token;
     await stopSignalRConnection();
 
-    // await fetch("https://localhost:8000/identity/Auth/token/revoke", {
-    await fetch(
-      "https://fucapstone-be-gateway.onrender.com/identity/Auth/token/revoke",
-      {
+    await fetch("https://localhost:8000/identity/Auth/token/revoke", {
+    // await fetch(
+    //   "https://fucapstone-be-gateway.onrender.com/identity/Auth/token/revoke",
+    //   {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ accessToken }),
